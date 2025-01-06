@@ -547,7 +547,6 @@ body {
 @media (max-width: 1024px) {
     .category-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
     }
     
     .category-card {
