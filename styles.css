@@ -820,3 +820,20 @@ body {
 .review-dot.active {
     background-color: var(--primary-color);
 }
+
+/* Brands Banner */
+.brands-banner {
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+}
+
+.banner-slide {
+    width: 100%;
+}
+
+.brand-banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
