@@ -49,3 +49,46 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Reviews Slider
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.review-slide');
+    const dots = document.querySelectorAll('.review-dot');
+    const prevButton = document.querySelector('.prev-review');
+    const nextButton = document.querySelector('.next-review');
+    let currentSlide = 0;
+
+    // Show initial slide
+    slides[0].classList.add('active');
+
+    // Function to show slide
+    function showSlide(index) {
+        // Remove active class from all slides and dots
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        // Add active class to current slide and dot
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentSlide = index;
+    }
+
+    // Next slide
+    nextButton.addEventListener('click', () => {
+        let nextIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextIndex);
+    });
+
+    // Previous slide
+    prevButton.addEventListener('click', () => {
+        let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prevIndex);
+    });
+
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+        });
+    });
+});
