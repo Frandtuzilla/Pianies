@@ -72,6 +72,21 @@ body {
     align-items: center;
     padding: 1rem 2rem;
     border-bottom: 2px solid var(--primary-color);
+    
+    /* Sticky navigation styles */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white; /* Or your preferred background color */
+    z-index: 1000; /* Ensures nav stays above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow */
+}
+
+/* Add padding to body to prevent content from hiding under fixed navbar */
+body {
+    padding-top: calc(4rem + 2rem + 2px); /* logo height + padding + border */
+    margin: 0;
 }
 
 .brand {
@@ -79,7 +94,7 @@ body {
     font-weight: 500;
 }
 
-.logo img {
+.logo {
     height: 4rem;
 }
 
@@ -88,20 +103,40 @@ body {
     gap: 1rem;
 }
 
-.icon-btn {
+/* Modified styles for links (previously buttons) */
+.icon-link {
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
 }
 
 .icon {
     width: 1.25rem;
     height: 1.25rem;
+    transition: all 0.2s ease;
+    filter: brightness(1) contrast(1);
+}
+
+/* Enhanced hover effects */
+.icon-link:hover .icon {
+    opacity: 0.7;
+    transform: scale(1.15);
+    filter: brightness(1.2) contrast(1.2);
+}
+
+/* Optional: Add active state for when the icon is clicked */
+.icon-link:active .icon {
+    transform: scale(0.95);
 }
 
 /* Main Menu */
-.main-menu {
+/* .main-menu {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -118,12 +153,12 @@ body {
 
 .menu-item:hover {
     color: #666;
-}
+} */
 
 /* Hero Section */
 .hero {
     display: flex;
-    height: calc(100vh - 8rem);
+    height: calc(100vh - 9rem);
 }
 
 .hero-content {
