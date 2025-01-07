@@ -11,15 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Navigating to:', e.target.textContent);
         });
     });
-
-    // Smooth scroll for CTA button
-    const ctaButton = document.querySelector('.cta-button');
-    ctaButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: window.innerHeight,
-            behavior: 'smooth'
-        });
-    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
